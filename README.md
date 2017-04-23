@@ -20,3 +20,8 @@ raspivid -o - -t 0 -hf -w 800 -h 400 -fps 24 |cvlc -vvv stream:///dev/stdin --so
 ## RPi-Cam Web Interface - nice web-interface to Rpi camera streaming
 
 [RPi-Cam-Web-Interface](http://elinux.org/RPi-Cam-Web-Interface)
+
+## To take pictures (native testing)
+```
+raspistill -o image.jpg
+```
