@@ -38,7 +38,6 @@ $ sudo apt-get install libboost-all-dev
 $ sudo pip3 install numpy
 $ sudo pip3 install scipy
 $ sudo pip3 install scikit-image
-
 ```
 2. Increase swap file to 400 MB
 ```
@@ -49,7 +48,7 @@ $ sudo /etc/init.d/dphys-swapfile start
 ```
 3. Decrease GPU memory on Rpi
 ```
-raspi-config
+$ sudo raspi-config
 Advanced Option --> Memory Split --> 16
 ```
 
@@ -68,6 +67,6 @@ $ sudo /etc/init.d/dphys-swapfile start
 
 6. Increase GPU memory on Rpi
 ```
-raspi-config
+$ sudo raspi-config
 Advanced Option --> Memory Split --> 128
 ```
