@@ -25,3 +25,49 @@ raspivid -o - -t 0 -hf -w 800 -h 400 -fps 24 |cvlc -vvv stream:///dev/stdin --so
 ```
 raspistill -o image.jpg
 ```
+
+
+## Installing dlib on Rpi
+
+1. Install dependencies
+
+```
+$ sudo apt-get install build-essential cmake
+$ sudo apt-get install libgtk-3-dev
+$ sudo apt-get install libboost-all-dev
+$ sudo pip3 install numpy
+$ sudo pip3 install scipy
+$ sudo pip3 install scikit-image
+
+```
+2. Increase swap file to 400 MB
+```
+$ sudo /etc/init.d/dphys-swapfile stop
+$ sudo nano /etc/dphys-swapfile
+CONF_SWAPSIZE=400
+$ sudo /etc/init.d/dphys-swapfile start
+```
+3. Decrease GPU memory on Rpi
+```
+raspi-config
+Advanced Option --> Memory Split --> 16
+```
+
+4. Install dlib
+```
+$ sudo pip3 install dlib
+```
+
+5. Return swap file to 100/200 MB
+```
+$ sudo /etc/init.d/dphys-swapfile stop
+$ sudo nano /etc/dphys-swapfile
+$ modify line --> CONF_SWAPSIZE=200
+$ sudo /etc/init.d/dphys-swapfile start
+```
+
+6. Increase GPU memory on Rpi
+```
+raspi-config
+Advanced Option --> Memory Split --> 128
+```
